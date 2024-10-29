@@ -288,7 +288,7 @@ export const getStaticProps = async () => {
         data: data?.page || null,
         layout: layout || null,
       },
-      revalidate: 1, // Revalidate every 1 second
+      revalidate: 0, // Revalidate every 1 second
     };
   } catch (error) {
     console.error(error);
@@ -296,7 +296,7 @@ export const getStaticProps = async () => {
       props: {
         data: null,
       },
-      revalidate: 1, // Revalidate every 1 second even if there's an error
+      revalidate: 0, // Revalidate every 1 second even if there's an error
     };
   }
 };
