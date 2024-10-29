@@ -1,0 +1,71 @@
+import { gql } from '@apollo/client';
+export const CollectionDetailPageQuery = gql`
+  query CollectionDetails($id: ID!) {
+  collection(id: $id,  idType: SLUG) {
+    seo {
+      title
+      metaDesc
+    }
+    title
+    featuredImage{
+      node{
+        mediaItemUrl
+      }
+    }
+    collectionField{
+      overviewSectionTitle
+      overviewText
+      overviewImage{
+        node{
+          mediaItemUrl
+        }
+      }
+      aboutText
+      sliderWithText{
+        sliderHeading
+        sliderTextContent
+        sliderImage{
+          node{
+            mediaItemUrl
+          }
+        }
+      }
+      unmatchedAccessibilitySectionHeading
+      nearByPlaces{
+        placeDuration
+        nearbyPlace
+      }
+      happinessSectionHeading
+      happinessSubheading
+      amenities{
+        amenitiesIcon{
+          node{
+            mediaItemUrl
+          }
+        }
+        amenitiesText
+      }
+      craftedForStyleHeading
+      craftedForStyleSubheading
+      architectureSlider{
+        architectureImage{
+          node{
+            mediaItemUrl
+          }
+        }
+        architectureText
+      }
+      uniteTypeAndSizesHeading
+      uniteTypeAndSizes{
+        bedroomImage{
+          node{
+            mediaItemUrl
+          }
+        }
+        typesOfBedroom
+        unitAndSizes
+      }
+    }
+  }
+}
+`;
